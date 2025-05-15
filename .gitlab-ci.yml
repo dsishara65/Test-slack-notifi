@@ -1,0 +1,8 @@
+slack_notify:
+  stage: notify
+  script:
+    - curl -X POST -H 'Content-type: application/json' \
+      --data '{"text":"✅ Code pushed by $GITLAB_USER_NAME to $CI_PROJECT_NAME"}' \
+      https://hooks.slack.com/services/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
+  only:
+    - main
